@@ -44,9 +44,10 @@ function initKinks() {
         }
 
         $(".kinkimage").on("click", function(e) {
-            e.preventDefault();
-            var selected = $(this).attr("checked");
-            if(selected === "true") {
+            console.log($(this));
+            var selected = $(this).hasClass("checked");
+            console.log(selected)
+            if(selected) {
                 $(this).removeClass("checked");
                 $(this).removeClass("border border-success border-5");
             } else {
