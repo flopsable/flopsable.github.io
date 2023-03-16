@@ -34,7 +34,7 @@ function initKinks() {
             
             row.append(col)
             col.append(image);
-            col = $("<div>").addClass("col offset-md-3");
+            col = $("<div>").addClass("col-md-2 offset-md-3");
             counter++;
             if (counter === 4) {
                 counter = 0;
