@@ -8,8 +8,8 @@ function initKinks() {
     alert("Document Ready");
 }
 
-$(document).on("ready", function(e) {
+$(document).ready(function(e) {
     for (func in pageInitFunctions) {
         func();
     }
-})
+});
