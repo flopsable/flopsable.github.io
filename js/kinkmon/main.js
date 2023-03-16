@@ -22,8 +22,8 @@ function initKinks() {
         var kinkboard = $(".kinkboard").find("div.row");
         for (var index in resp.kinkmon) {
             var type = (resp.kinkmon[index]);
-            var col = $(<div></div>).addClass("col");
-            var image = $(<img></img>).attr("src", "/images/kinkmon/" + type.file);
+            var col = $("<div>").addClass("col");
+            var image = $("<img>").attr("src", "/images/kinkmon/" + type.file);
             col.append(image);
             kinkboard.append(col);
         }
