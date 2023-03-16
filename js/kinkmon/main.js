@@ -22,14 +22,14 @@ function initKinks() {
         var kinkboard = $(".kinkboard");
         var counter = 0;
         var row = $("<div>").addClass("row");
-        var col = $("<div>").addClass("col");
+        var col = $("<div>").addClass("col offset-md-3");
         
         for (var index in resp.kinkmon) {
             
 
             var type = (resp.kinkmon[index]);
             
-            var image = $("<img>").attr("src", "/images/kinkmon/" + type.file).addClass("img-fluid");
+            var image = $("<img>").attr("src", "/images/kinkmon/" + type.file).addClass("kinkimage");
             image.attr("style", "max-width:200px");
             
             row.append(col)
@@ -39,9 +39,21 @@ function initKinks() {
                 counter = 0;
                 kinkboard.append(row);
                 row = $("<div>").addClass("row");
-                col = $("<div>").addClass("col");
+                col = $("<div>").addClass("col offset-md-3");
             }
         }
+
+        $(".kinkimage").on("click", function(e) {
+            e.preventDefault();
+            var selected = $(this).attr("checked");
+            if(selected === "true") {
+                $(this).removeClass("checked");
+                $(this).removeClass("border border-success border-5");
+            } else {
+                $(this).addClass("checked");
+                $(this).addClass("border border-success border-5");
+            }
+        })
     })
 }
 
