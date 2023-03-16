@@ -24,7 +24,7 @@ function initKinks() {
             var type = (resp.kinkmon[index]);
             var col = $("<div>").addClass("col");
             var image = $("<img>").attr("src", "/images/kinkmon/" + type.file);
-            image.attr("style", "max-width:20%");
+            image.attr("style", "max-width:200px");
             col.append(image);
             kinkboard.append(col);
         }
