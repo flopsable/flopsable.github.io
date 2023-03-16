@@ -30,7 +30,7 @@ function initKinks() {
             var type = (resp.kinkmon[index]);
             
             var image = $("<img>").attr("src", "/images/kinkmon/" + type.file).addClass("kinkimage");
-            image.attr("style", "max-width:200px");
+            image.attr("style", "max-width:180px");
             
             row.append(col)
             col.append(image);
