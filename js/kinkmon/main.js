@@ -19,7 +19,7 @@ function initKinks() {
         url: "/json/images.json",
         type: "GET"
     }).done(function(resp) {
-        var  = $(".kinkboard");
+        var kinkboard = $(".kinkboard");
         var counter = 0;
         var row = $("<div>").addClass("row");
         for (var index in resp.kinkmon) {
@@ -28,10 +28,11 @@ function initKinks() {
             var type = (resp.kinkmon[index]);
             var col = $("<div>").addClass("col");
             var image = $("<img>").attr("src", "/images/kinkmon/" + type.file);
-            image.attr("style", "max-width:200px");
+            image.attr("style", "max-width:100px");
             col.append(image);
             row.append(col)
-            if (counter === 5) {
+            counter++;
+            if (counter === 3) {
                 counter = 0;
                 kinkboard.append(row);
                 row = $("<div>").addClass("row");
