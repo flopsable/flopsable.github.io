@@ -1,3 +1,5 @@
+var pageInitFunctions = [];
+
 pageInitFunctions.push(function() {
     initKinks();
 });
