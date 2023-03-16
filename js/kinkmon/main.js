@@ -22,7 +22,7 @@ function initKinks() {
         var kinkboard = $(".kinkboard");
         var counter = 0;
         var row = $("<div>").addClass("row");
-        var col = $("<div>").addClass("col offset-md-3");
+        var col = $("<div>").addClass("col-md-2 offset-md-3");
         
         for (var index in resp.kinkmon) {
             
@@ -34,12 +34,13 @@ function initKinks() {
             
             row.append(col)
             col.append(image);
+            col = $("<div>").addClass("col offset-md-3");
             counter++;
             if (counter === 4) {
                 counter = 0;
                 kinkboard.append(row);
                 row = $("<div>").addClass("row");
-                col = $("<div>").addClass("col offset-md-3");
+                
             }
         }
 
