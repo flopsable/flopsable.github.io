@@ -2,6 +2,7 @@ var pageInitFunctions = [];
 
 pageInitFunctions.push(function() {
     initKinks();
+    initScreenshot();
 });
 /*
 <div class="col">
@@ -14,6 +15,21 @@ pageInitFunctions.push(function() {
             Column
           </div>
 */
+
+function initScreenshot() {
+    $(".screenshotButton").on("click", function(e) {
+        e.preventDefault();
+        var element = document.getElementById("kinkboard");
+        html2canvas(element).then(function(canvas) {
+            var link = document.createElement('a');
+            link.download = 'filename.png';
+            link.href = canvas.toDataURL()
+            link.click(); 
+        });
+    })
+    
+}
+
 function initKinks() {
     var json = $.ajax({
         url: "/json/images.json",
